@@ -8,24 +8,85 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      // { text: 'Example', link: '/example' },
-      { text: '前端框架', link: '/fronted-framework' },
-      { text: '互動網頁', link: '/interactive-web' },
-      { text: '專案', link: '/side-projects' },
-      { text: '部落格', link: 'https://shuan-blog.vercel.app/' },
+      {
+        text: '前端開發',
+        items: [
+          { text: 'Javascript', link: '/frontend/javascript/' },
+          { text: 'React', link: '/frontend/react/' },
+        ],
+      },
+      {
+        text: '互動網站開發',
+        items: [
+          { text: '互動網站', link: '/interactive/' },
+          { text: 'GSAP', link: '/interactive/gsap/' },
+        ],
+      },
+      { text: 'Side Project', link: '/side-projects' },
+      { text: 'Blog', link: 'https://shuan-blog.vercel.app/' },
     ],
 
+    // sidebar: {
+    //   '/javascript/': [
+    //     {
+    //       text: 'JavaScript',
+    //       items: [
+    //         { text: 'Intro', link: '/javascript/' },
+    //         { text: '型別', link: '/javascript/datatype' },
+    //         { text: '陣列操作', link: '/javascript/array' },
+    //       ],
+    //     },
+    //   ],
+    //   '/react/': [
+    //     {
+    //       text: 'React Hooks',
+    //       items: [
+    //         { text: 'useState', link: '/react/' },
+    //         { text: 'useRef', link: '/react/' },
+    //         { text: 'useEffect', link: '/react/' },
+    //       ],
+    //     },
+    //   ],
+    //   '/vue/': [
+    //     {
+    //       text: 'Vue',
+    //       items: [{ text: 'Intro', link: '/vue/' }],
+    //     },
+    //   ],
+    //   '/interactive/': [
+    //     {
+    //       text: '互動網站開發',
+    //       collapsed: false,
+    //       items: [{ text: '常見套件比較', link: '/interactive/' }],
+    //     },
+    //     {
+    //       text: 'GSAP',
+    //       collapsed: false,
+    //       items: [{ text: 'GSAP', link: '/interactive/gsap/' }],
+    //     },
+    //   ],
+    //   '/side-projects/': [
+    //     {
+    //       text: 'Side Projects',
+    //       collapsed: false,
+    //       items: [
+    //         { text: '12 Week Year Planner', link: '/side-projects/' },
+    //         { text: 'Rostonse Gallery Collection', link: '/side-projects/' },
+    //       ],
+    //     },
+    //   ],
+    // },
     sidebar: {
-      '/example/': [
+      '/frontend/': [
         {
-          text: '範例',
+          text: 'JavaScript',
+          collapsed: false,
           items: [
-            { text: 'Markdown 範例', link: '/example/markdown-examples' },
-            { text: 'Api 範例', link: '/example/api-examples' },
+            { text: 'Intro', link: '/frontend/javascript/' },
+            { text: '型別', link: '/frontend/javascript/datatype' },
+            { text: '陣列操作', link: '/frontend/javascript/array' },
           ],
         },
-      ],
-      '/fronted-framework/': [
         {
           text: 'React',
           items: [
@@ -33,75 +94,36 @@ export default defineConfig({
               text: 'React Hooks',
               collapsed: true,
               items: [
-                { text: 'Intro', link: '/react/' },
-                { text: 'useState', link: '/react/react-useState' },
-              ],
-            },
-            {
-              text: 'React 套件',
-              collapsed: true,
-              items: [
-                {
-                  text: 'React Router DOM 路由設定',
-                  link: '/react/react-router-dom',
-                },
-                { text: 'React Query', link: '/react/react-query' },
-              ],
-            },
-            {
-              text: 'Next.js',
-              collapsed: true,
-              items: [
-                {
-                  text: 'Next.js 簡介',
-                  link: '/react/nextjs-intro',
-                },
-                {
-                  text: 'Next.js 路由',
-                  link: '/react/nextjs-routing',
-                },
-              ],
-            },
-          ],
-        },
-        {
-          text: 'Vue',
-          items: [
-            {
-              text: 'Vue 基本語法',
-              collapsed: true,
-              items: [
-                { text: 'v-for', link: '/' },
-                { text: 'v-if', link: '/' },
-                {
-                  text: 'Level 2',
-                  collapsed: false,
-                  items: [
-                    {
-                      text: 'Level 3',
-                      items: [
-                        { text: 'Level 4', link: '/side-projects/' },
-                        { text: 'Level 4', link: '/side-projects/' },
-                      ],
-                    },
-                  ],
-                },
+                { text: 'useState', link: '/frontend/react/usestate' },
+                { text: 'useRef', link: '/frontend/react/useref' },
+                { text: 'useEffect', link: '/frontend/react/useeffect' },
               ],
             },
           ],
         },
       ],
-      '/interactive-web/': [
+      '/interactive/': [
         {
-          text: '簡介',
+          text: '互動網站開發',
+          collapsed: true,
+          items: [
+            { text: '常見工具', link: '/interactive/' },
+            {
+              text: '參考資源',
+              link: '/interactive/reference',
+            },
+          ],
+        },
+        {
+          text: 'GSAP',
           collapsed: false,
-          items: [{ text: '套件差異', link: '/interactive-web/' }],
+          items: [{ text: 'GSAP介紹', link: '/interactive/gsap/' }],
         },
       ],
       '/side-projects/': [
         {
           text: 'Side Projects',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: '12 Week Year Planner', link: '/side-projects/' },
             { text: 'Rostonse Gallery Collection', link: '/side-projects/' },
@@ -109,7 +131,6 @@ export default defineConfig({
         },
       ],
     },
-
     socialLinks: [{ icon: 'github', link: 'https://github.com/shuantt' }],
     search: {
       provider: 'local',
